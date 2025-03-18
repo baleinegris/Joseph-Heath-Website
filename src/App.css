@@ -1,19 +1,45 @@
+.oswald-Oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.josefin-sans-JosefinSans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  /* box-sizing: border-box; */
+  /* outline: 1px solid red; */
+  /*For testing overflow*/
+}
+
 .App{
-  font-family: Georgia, sans-serif;
+  font-family: Oswald, sans-serif;
   margin: 0;
   padding: 0;
 }
 
+body{
+  scroll-snap-type: y proximity;
+  overflow: scroll;
+}
+
 .navbar{
-  position: absolute;
+  background-color: rgb(0,0,0,0.5);
+  z-index: 1;
+  position: fixed;
   top: 0;
-  min-height: 100px;
+  height: 100px;
   text-align: center;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(19, 19, 19);
 }
 
 .navbuttons-container{
@@ -26,33 +52,30 @@
 }
 
 .navbutton{
-  font-family: Georgia;
+  position: relative;
+  font-size: 18px;
+  font-family: Josefin Sans;
   font-weight: bold;
-  background-color: rgb(19, 19, 19);
-  color: white;
-  height: 100%;
+  background-color: rgb(0,0,0,0);
+  color: whitesmoke;
   padding: 0.5%;
   border: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100px;
-  height: 100%;
-  flex-grow: 1;
 }
 
 .navbutton:hover{
-  background-color: rgb(110, 110, 110);
-  color: black;
+  opacity: 0.7;
 }
 
 .homebutton{
-  font-size: 1.5em;
-  font-family: Georgia;
+  background-color: rgb(0,0,0,0);
+  font-size: 40px;
+  font-family: Josefin Sans, sans-serif;
   font-weight: bold;
-  background-color: rgb(19, 19, 19);
-  color: white;
-  width: 10%;
+  color: whitesmoke;
+  width: fit-content;
   margin: 0 1%;
   margin-right: 15%;
   padding: 0.5%;
@@ -64,15 +87,242 @@
 }
 
 .homepage{
-  font-family: Georgia, sans-serif;
+  font-family: Oswald, sans-serif;
 }
 
-.first-elt{
-  margin-top: 100px;
+.blurb{
+  scroll-snap-align: end;
 }
 
-#blurb-1-container{
-  background-image: url('../public/homepageBg1.png');
+.blurb-container{
+  background-attachment: fixed;
   background-size: 100% auto;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.blurb-text-container{
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  opacity: 0;
+  position:absolute;
+  bottom: 0;
+}
+
+#blurb-1{
+  background-image: url('../public/homepageBg1Upscaled.png');
+}
+
+#blurb-2{
+  background-image: url('../public/homepageBg3.jpeg');
+}
+
+#blurb-3{
+  background-image: url('../public/homepageBg2.jpg');
+}
+
+#blurb-4{
+  background-image: url('../public/homepageBg4.jpg');
+}
+
+.blurb-text{
+  width: 97vw;
+  font-size: 1vw;
+  background-color: white;
+  color: gray;
+  font-weight: normal;
+  padding: 0.5%;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.blurb-title{
+  padding: 30px 0 0 0.5%;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  height: fit-content;
+  font-size: 1vw;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; blur: 5px; transform: translateX(-10%); width: 110%;}
+  100% { opacity: 1; blur: 0; transform: translateX(0); width: 100%;}
+}
+
+.fadeIn {
+  animation: fadeIn ease 1s;
+  animation-fill-mode: forwards; 
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.footer{
+  background-color: rgb(0,0,0,0.5);
+  z-index: 1;
+  min-height: 100px;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#scholar,#contact-footer{
+  flex-grow: 0;
+}
+
+#e2{
+  list-style-type: none;
+}
+
+.imgBand{
+  position: relative;
+  background-size: cover;
+  height: 30vh;
+}
+
+.imgBand-text-container{
+  position: absolute;
+  font-family: Josefin Sans, sans-serif;
+  font-size: 2em;
+  color: whitesmoke;
+  font-weight: bold;
+  bottom: 0;
+  padding-bottom: 3%;
+  padding-left: 1%;
+}
+
+.book-container{
+  margin: 1%;
+  background-color: rgb(0,0,0,0.5);
+  width: 80%;
+  display: flex;
+  justify-content: left;
+  padding: 1%;
+  border-radius: 2vw;
+  box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.7);
+}
+
+#all-books-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-cover{
+  margin-left: 1%;
+  width: 150px;
+  max-height: 300px;
+  height: auto;
+}
+
+.book-text{
+  font-family: Oswald, sans-serif;
+  padding: 1%;
+  background-color: white;
+  color: black;
+  border-radius: 0 2vw 2vw 0;
+  border-left: 1px solid black;
+}
+
+.book-title{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.book-blurb{
+  font-size: 1em;
+  color: rgb(95, 95, 95);
+}
+
+.articles-container{
+  display: flex;
+  font-size: 1.4em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.commentary-container{
+  background-color: rgb(0,0,0,0.5);
+  font-family: Oswald, sans-serif;
+  font-size: large;
+  margin: 1%;
+  justify-content: center;
+  text-align: center;
+  padding: 1%;
+  border-radius: 2vw;
+  box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.7);
+  }
+
+.video-title{
+    font-family: Oswald, sans-serif;
+}
+
+.footer-signature{
+  font-family: Oswald, sans-serif;
+  font-size: 1em;
+  color: whitesmoke;
+  padding: 1%;
+  position: absolute;
+  right: 0;
+}
+
+.navbutton::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s;
+}
+
+.navbutton:hover::before{
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+.contact-container{
+    background-color: rgb(0,0,0,0.5);
+    font-family: Oswald, sans-serif;
+    font-size: large;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1%;
+    border-radius: 2vw;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.7);
+    gap: 1%;
+}
+
+.contact-blurb{
+  text-align: left;
+}
+
+.contact-img{
+  width: 300px;
+  height: auto;
+  border-radius: 10%;
+  border: 1px solid black;
+}
+
+.contact-title{
+  text-align: left;
+  font-size: 2em;
+  font-weight: bold;
 }

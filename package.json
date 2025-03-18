@@ -1,6 +1,6 @@
 {
-  "homepage": ".",
   "name": "joesite",
+  "homepage": "http://individual.utoronto.ca/jheath/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "^18.3.3",
+    "html-react-parser": "^5.1.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
